@@ -1,0 +1,12 @@
+from wordcloud import WordCloud
+import matplotlib.pyplot as plt
+
+text = open('Jane Eyre.txt','r').read()    #Jane Eyre.txt为下载到路径的txt文档
+# 生成词云
+wordcloud = WordCloud().generate(text)
+# 显示词云图片
+plt.imshow(wordcloud)
+plt.axis('off')
+plt.show()
+# 保存图片
+wordcloud.to_file('test.jpg')
