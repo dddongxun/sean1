@@ -5,15 +5,15 @@ import matplotlib.pyplot as plt
 from wordcloud import WordCloud
 import jieba
 from collections import Counter
-# 读入 西游记 txt 文件，windows 下过滤编码错误
+# 读入 西游记 txt 文件
 text = open('xiyouji.txt').read()
 # 使用 jieba 分词
 text_jieba = list(jieba.cut(text))
-# 使用 counter 做词频统计，选取出现频率前 100 的词汇
+# 使用 counter 做词频统计，选取出现频率前 50 的词汇
 c = Counter(text_jieba)
 common_c = c.most_common(50)
 
-wc=WordCloud(font_path = 'DroidSansFallbackFull.ttf',
+wc=WordCloud(font_path = 'DroidSansFallbackFull.ttf',            #DroidSansFallbackFull.ttf是我下载的字体文件，放在默认路径中
     # 设置背景色
     background_color='white',
     # 允许最大词汇
